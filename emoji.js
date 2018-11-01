@@ -2,11 +2,11 @@
 ~
 { re:
     { id: 'anemojii.emoji@ions.iskitz.net'
-    , is: "anemojii's emoji ions"
+    , is: "anemojii's emoji"
     , by: 'mike.lee@iskitz'
-    , on: -7.20151021
-    , to: +9.20181022
-    , at: +2.2
+    , at: -7.20151021
+    , to: -7.20181101
+    , on: +2.2
     , it:
         [ "creates a random ion, aesop | storie type emoji for each request"
         , "found an ionify bug where ion members named next have no .ion field"
@@ -29,15 +29,16 @@
       { var emoji = create.ion
           , get   = emoji.choose
           , eyes  = emoji.eyes
+          , eye   = Math.random * eyes.length | 0
           , ears  = emoji.ears
           , ear   = Math.random * ears.left.length | 0
           , face  = { left
                     :   { ear: ears.left [ear]
-                        , eye: get (eyes) 
+                        , eye: eyes [eye] //get (eyes) 
                         }
                     , right
                     :   { ear: ears.right [ear]
-                        , eye: get (eyes)
+                        , eye: eyes [eye] //get (eyes)
                         }
                     , nose
                     :   get (emoji.nose)
@@ -69,7 +70,7 @@
 
 , storie
 :   function storie (emoji)
-      { with (emoji) return '+/ d('+ left.eye +' '+ nose +' '+ right.eye +')b /;'
+      { with (emoji) return "+/d('"+ left.eye +' '+ nose +' '+ right.eye +"')b/;"
       }
 
 , string

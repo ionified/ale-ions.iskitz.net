@@ -22,6 +22,6 @@ body
 
 @media (min-width:1281px)     /* hi-res laptops and desktops */
   { body
-    { padding-top: 25%
-    }
+      { padding-top: 25%
+      }
   }
